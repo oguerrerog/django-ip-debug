@@ -10,6 +10,8 @@ setup(
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     url='https://github.com/oguerrero/django-ip-debug',
+    download_url='https://github.com/oguerrerog/django-ip-debug/archive/refs/tags/v0.1.0.tar.gz',
+    keywords='debub django',
     author='Oscar Guerrero G.',
     author_email='oguerrerog@gmail.com',
     license='MIT license',
