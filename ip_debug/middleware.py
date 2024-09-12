@@ -33,7 +33,7 @@ class IPDebugMiddleware:
     def __call__(self, request):
         #
         # Conseguimos IP del usuario
-        ip = ipCheck()
+        ip = ipCheck(request)
         
         try:
             client_ip = ipaddress.ip_address(ip)
