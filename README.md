@@ -62,7 +62,7 @@ DEBUG_IP_TRUSTED_PROXIES = [
 ]
 ```
 
-##📚 Versiones
+## 📚 Versiones
 - 0.1.0: Primer Commit
 - 0.1.1: Se implementa función para detectar correctamente la dirección IP.
 - 0.1.2: Corrección de Errores.
