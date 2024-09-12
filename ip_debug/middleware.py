@@ -1,6 +1,26 @@
 import ipaddress
 from django.conf import settings
 
+
+def ipCheck(request):
+    """ 
+    Conseguimos la Direccion IP de quien se conecta a la APP 
+    """
+    
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR', '')
+    if x_forwarded_for:
+        return x_forwarded_for.split(',')[0].strip()
+
+    x_real_ip = request.META.get('HTTP_X_REAL_IP', '')
+    if x_real_ip:
+        return x_real_ip.strip()
+
+    remote_addr = request.META.get('REMOTE_ADDR', '')
+    if remote_addr:
+        return remote_addr.strip()
+
+    return '127.0.0.1'
+
 class IPDebugMiddleware:
     """
     Middleware que habilita o deshabilita DEBUG basado en la IP de la solicitud.
@@ -13,7 +33,7 @@ class IPDebugMiddleware:
     def __call__(self, request):
         #
         # Conseguimos IP del usuario
-        ip = request.META.get('REMOTE_ADDR', '')
+        ip = ipCheck()
         
         try:
             client_ip = ipaddress.ip_address(ip)
