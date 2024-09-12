@@ -5,13 +5,13 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-ip-debug',
-    version='0.1.2',
-    description='Middleware para habilitar DEBUG solo para ciertas IPs en proyectos Django',
+    version='0.1.3',
+    description='Middleware que habilita DEBUG solo para ciertas IPs en Proyectos Django',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     url='https://github.com/oguerrero/django-ip-debug',
-    download_url='https://github.com/oguerrerog/django-ip-debug/archive/refs/tags/v0.1.2.tar.gz',
-    keywords='debub django',
+    download_url='https://github.com/oguerrerog/django-ip-debug/archive/refs/tags/v0.1.3.tar.gz',
+    keywords='debug django',
     author='Oscar Guerrero G.',
     author_email='oguerrerog@gmail.com',
     license='MIT license',
