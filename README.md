@@ -72,6 +72,7 @@ DEBUG_IP_TRUSTED_PROXIES = [
 - 0.1.3: Mejoras Globales.
 - 0.1.4: Mejoras para CIDR.
 - 0.1.5: Fix setup.py
+- 0.1.6: Fix URL setup.py
 
 ## 😜 Agradecimientos
 Agradecimientos especiales a [MercadoPago](https://github.com/mercadopago "MercadoPago"), ese maravilloso y extraordinario servicio de pagos en línea que me "regalo" la emocionante oportunidad de enfrentarme a la "divertida" tarea de crear un entorno de producción/desarrollo solo para integrarme con ellos (es inevitable). Así que, lleno de "inspiración" (y tal vez un poco de desesperación), me lancé a la emocionante aventura de crear mi primer middleware para poder "debugear" mi proceso de integración y mantener mi cordura intacta ante la preocupación de tener el DEBUG disponible para todo el mundo.

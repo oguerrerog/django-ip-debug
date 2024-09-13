@@ -1,4 +1,4 @@
-# v0.1.5
+# v0.1.6
 
 import ipaddress
 from django.conf import settings

@@ -42,3 +42,4 @@ jobs:
     - name: Run project tests
       run: |
         python manage.py test
+
