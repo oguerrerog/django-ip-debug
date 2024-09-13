@@ -29,10 +29,16 @@ jobs:
         pip install ipaddress
         pip install requests
 
+    - name: Create Django project if not exists
+      run: |
+        if [ ! -f manage.py ]; then
+          django-admin startproject test .
+        fi
+
     - name: Set up database
       run: |
         python manage.py migrate
 
-    - name: Run tests
+    - name: Run project tests
       run: |
         python manage.py test
