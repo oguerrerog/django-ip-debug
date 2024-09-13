@@ -19,10 +19,9 @@ Esto evita la tarea de modificar la configuración del proyecto cada vez que se 
 
 ```bash
 pip install django-ip-debug
-
 ```
-2) Agrega la ruta del Middleware a tu archivo **settings.py**:
 
+2) Agrega la ruta del Middleware a tu archivo **settings.py**:
 ```python
 MIDDLEWARE = [
     'ip_debug.middleware.IPDebugMiddleware',
@@ -31,7 +30,6 @@ MIDDLEWARE = [
 ```
 
 3) Define las variables a tu archivo **settings.py**: 
-
 ```python
 # Establecer DEBUG en False
 DEBUG = False
@@ -68,9 +66,7 @@ DEBUG_IP_TRUSTED_PROXIES = [
 - 0.1.2: Corrección de Errores.
 - 0.1.3: Mejoras Globales.
 
-
-## ❤️Agradecimientos
+## 😜 Agradecimientos
 Agradecimientos especiales a [MercadoPago](https://github.com/mercadopago "MercadoPago"), ese maravilloso y extraordinario servicio de pagos en línea que me "regalo" la emocionante oportunidad de enfrentarme a la "divertida" tarea de crear un entorno de producción/desarrollo solo para integrarme con ellos (es inevitable). Así que, lleno de "inspiración" (y tal vez un poco de desesperación), me lancé a la emocionante aventura de crear mi primer middleware para poder "debugear" mi proceso de integración y mantener mi cordura intacta ante la preocupación de tener el DEBUG disponible para todo el mundo.
 
-Desde hoy dormiré en paz y sin despertar a medianoche, preocupado tratando de recordar si deje en el setting.py el debug en "**False**". xD
-
+Desde hoy dormiré en paz y sin despertar a medianoche preocupado tratando de recordar si deje en el setting.py el debug en "**False**". xD
