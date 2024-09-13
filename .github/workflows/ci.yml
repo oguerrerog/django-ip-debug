@@ -27,7 +27,7 @@ jobs:
       run: |
         pip install django==${{ matrix.django-version }}
         pip install ipaddress
-        pip install request
+        pip install requests
 
     - name: Run tests
       run: |
