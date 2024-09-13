@@ -32,7 +32,7 @@ jobs:
     - name: Create Django project if not exists
       run: |
         if [ ! -f manage.py ]; then
-          django-admin startproject test .
+          django-admin startproject tester .
         fi
 
     - name: Set up database
