@@ -16,8 +16,8 @@ Considerar el uso de esta herramienta solo para efectos de depuración, integrac
 - Fácil integración con settings de Django.
 
 ## 💡 Requerimientos
-- Django 3.0 o superior
-- Python 3.0 o superior
+- Django 4.2 o superior
+- Python 3.9 o superior
 
 ## 📲 Instalación
 1) Instala la librería desde pip:
@@ -71,6 +71,7 @@ DEBUG_IP_TRUSTED_PROXIES = [
 - 0.1.2: Corrección de Errores.
 - 0.1.3: Mejoras Globales.
 - 0.1.4: Mejoras para CIDR.
+- 0.1.5: Fix setup.py
 
 ## 😜 Agradecimientos
 Agradecimientos especiales a [MercadoPago](https://github.com/mercadopago "MercadoPago"), ese maravilloso y extraordinario servicio de pagos en línea que me "regalo" la emocionante oportunidad de enfrentarme a la "divertida" tarea de crear un entorno de producción/desarrollo solo para integrarme con ellos (es inevitable). Así que, lleno de "inspiración" (y tal vez un poco de desesperación), me lancé a la emocionante aventura de crear mi primer middleware para poder "debugear" mi proceso de integración y mantener mi cordura intacta ante la preocupación de tener el DEBUG disponible para todo el mundo.
