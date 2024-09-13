@@ -5,6 +5,11 @@
 
 Esto evita la tarea de modificar la configuración del proyecto cada vez que se necesite habilitar o deshabilitar el modo DEBUG, lo que permite a los desarrolladores y equipos de auditoría o pruebas acceder a información de depuración detallada y resolver problemas de forma eficiente, al mismo tiempo que se mantiene la seguridad del sitio web al restringir el acceso a esta información **solo a direcciones IP confiables**.
 
+## 🤓 Advertencia
+Modificar el valor de DEBUG en tiempo de ejecución no es una práctica recomendada. DEBUG en Django está pensado para ser una configuración estática y se espera que su valor se establezca al inicio de la aplicación. Cambiarlo en tiempo de ejecución puede llevar a comportamientos inesperados.
+
+Considerar el uso de esta herramienta solo para efectos de depuración, integraciones que necesiten un sitio en producción, testing, etc. 
+
 ## 🔎 Características
 - Habilita o deshabilita el modo DEBUG según la IP del cliente.
 - Soporta IPs individuales y rangos de IPs usando notación CIDR.
@@ -38,7 +43,7 @@ DEBUG = False
 DEBUG_IP_ENABLED = True
 
 # Lista de IPs Permitidas, puedes agregar rangos de IP con notación CIDR
-DEBUG_IP_ALLOWED_IPS = ['127.0.0.1', '192.168.0.50', '192.168.1.0/24']
+DEBUG_IP_ALLOWED = ['127.0.0.1', '192.168.0.50', '192.168.1.0/24']
 
 # Lista de Proxies autorizados, este ejemplo contiene la lista de Cloudflare
 DEBUG_IP_TRUSTED_PROXIES = [
@@ -65,6 +70,7 @@ DEBUG_IP_TRUSTED_PROXIES = [
 - 0.1.1: Se implementa función para detectar correctamente la dirección IP.
 - 0.1.2: Corrección de Errores.
 - 0.1.3: Mejoras Globales.
+- 0.1.4: Mejoras para CIDR.
 
 ## 😜 Agradecimientos
 Agradecimientos especiales a [MercadoPago](https://github.com/mercadopago "MercadoPago"), ese maravilloso y extraordinario servicio de pagos en línea que me "regalo" la emocionante oportunidad de enfrentarme a la "divertida" tarea de crear un entorno de producción/desarrollo solo para integrarme con ellos (es inevitable). Así que, lleno de "inspiración" (y tal vez un poco de desesperación), me lancé a la emocionante aventura de crear mi primer middleware para poder "debugear" mi proceso de integración y mantener mi cordura intacta ante la preocupación de tener el DEBUG disponible para todo el mundo.

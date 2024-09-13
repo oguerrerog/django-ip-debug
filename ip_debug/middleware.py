@@ -1,4 +1,4 @@
-# v0.1.3
+# v0.1.4
 
 import ipaddress
 from django.conf import settings
@@ -55,8 +55,7 @@ class IPDebugMiddleware:
 
     def __init__(self, get_response):
         self.get_response = get_response
-        self.allowed_ips = getattr(settings, 'DEBUG_IP_ALLOWED_IPS', [])
-
+        self.allowed_ips = getattr(settings, 'DEBUG_IP_ALLOWED', [])
 
     def __call__(self, request):
 
@@ -97,8 +96,13 @@ class IPDebugMiddleware:
     def is_ip_allowed(self, client_ip, allowed_ip):
         """
         Verifica si la IP del cliente está dentro del rango o es exacta.
+        Si `allowed_ip` es una IP individual, se asume una máscara de /32 o /128.
         """
         try:
+            # Si es una IP individual (sin CIDR), la convertimos a /32 (IPv4) o /128 (IPv6)
+            if '/' not in allowed_ip:
+                allowed_ip += '/32' if ':' not in allowed_ip else '/128'
+            
             allowed_network = ipaddress.ip_network(allowed_ip, strict=False)
             return client_ip in allowed_network
         except ValueError:
